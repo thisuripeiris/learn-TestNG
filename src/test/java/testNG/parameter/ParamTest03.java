@@ -1,0 +1,21 @@
+package testNG.parameter;
+
+import com.beust.jcommander.Parameter;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class ParamTest03 {
+
+    @Test
+    @Parameters("browser")
+    public void browserExecution(String browser){
+        System.out.println("TestNG XML browser value is: " + browser);
+        if(browser.equalsIgnoreCase("chrome")){
+            System.out.println("Browser should open with Chrome!");
+        } else if (browser.equalsIgnoreCase("edge")) {
+            System.out.println("Browser should open with Edge!");
+        } else {
+            System.out.println("Browser should open with FireFox!");
+        }
+    }
+}
